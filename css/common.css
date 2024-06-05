@@ -1,22 +1,24 @@
-.h1{
+.h1{ /*메인 제목*/
 font-size: calc(48px * 0.8);
+font-weight: 700;
 }
-.h2{
+.h2{ /*서브 제목*/
 font-size: calc(40px * 0.8);
+font-weight: 400;
 }
-.h3{
+.h3{ /*서브 내용, 내용 제목*/
 font-size: calc(36px * 0.8);
 }
-.h4{
+.h4{ /*주 내용*/
 font-size: calc(32px * 0.8);
 }
-.h5{
+.h5{ /서브 내용*/
 font-size: calc(20px * 0.8);
 }
-.h6{
+.h6{ /*내용*/
 font-size: 16px;
 }
-.p15{
+.p15{ 
 font-size: 15px;
 }
 .sm14{
