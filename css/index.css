@@ -9,6 +9,7 @@ header{
   top: 0;
   width: 100%;
   background-image: linear-gradient( 180deg, rgba(77,126,62,0.5) 30%, rgba(255, 255, 255, 0.39) 30% );
+  z-index: 1;
 }
 header div.wrap {
 
@@ -30,12 +31,23 @@ header div.wrap nav h1 a {
   background-repeat: no-repeat;
   width: 250px;
   height: 60px;
+  animation-name: Logo;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+@keyframes Logo{
+  0%{
+    transform: rotateY(0deg);
+  }
+  50%{
+    transform: rotateY(360deg);
+  }
 }
 header div.wrap nav ul.gnb {
 
 }
 header div.wrap nav ul.gnb li {
-
+  
 }
 header div.wrap nav ul.gnb li a {
   padding: 20px;
@@ -55,7 +67,6 @@ header div.wrap nav ul.gnb li a:hover::before{
 }
 header div.wrap nav ul.gnb li a:hover{
   color: #4D7E3E;
-  font-weight: 700;
 }
 header div.wrap nav ul.enb {
 
@@ -89,11 +100,52 @@ div#title div.wrap{
   align-items: center;
   flex-direction: column;
   gap: 30px;
+  perspective: 500px;
+  position: relative;
 }
 div#title div.wrap h2{
-  
+  animation-name: Title;
+  animation-duration: 2s;
+}
+@keyframes Title{
+  0%{
+    transform: translateY(0%) scaleY(0);
+    opacity: 0;
+  }
+  50%{
+    transform: translateY(50%) scaleY(0.3);
+  }
+  100%{
+    transform: translateY(0%) scaleY(1);
+    opacity: 1;
+  }
 }
 div#title div.wrap p{
+}
+div#title::after{
+  content: "Scroll down ∨";
+  display: block;
+  width: 50px;
+  height: 100px;
+  background-color: rgba(77,126,62,0.5);
+  position: absolute;
+  color: #444;
+  font-size: 14px;
+  font-weight: 600;
+  right: 15%;
+  bottom: 30px;
+  border-radius: 25px;
+  text-align: center;
+  align-content: center;
+  animation-name: scroll;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes scroll{
+  100%{
+    transform: translateY(20%);
+  }
 }
 /* main 영역 */
 main{
@@ -104,6 +156,7 @@ main{
   /*! background-color: rgba(77,126,62,0.5); */
   height: 100%;
   min-height: 700px;
+  background: linear-gradient(30deg, rgb(201, 216, 196) 10.1%, #fff 10.2%);
 }
 section{
   position: relative;
@@ -116,12 +169,12 @@ section::before{
   left: 5%;
   top: -5%;
   color: #4d7e3e;
-  opacity: 0.08;
+  opacity: 0.37;
   text-align: center;
+  z-index: -1;
 }
 #aboutme::before{
   content: "01";
-  z-index: -1;
 }
 #skill::before{
   content: "02";
@@ -147,6 +200,7 @@ section::before{
   grid-column: 1;
   grid-row: 2;
   align-self: center;
+  z-index: 1;
 }
 #aboutme div.wrap figure img{
 }
@@ -159,7 +213,11 @@ section::before{
   padding: 10px;
 }
 #aboutme div.wrap ul.intro>li h3{ 
-  padding: 10px 0;
+  padding: 10px 20px;
+  background-color: rgba(77,126,62,0.8);
+  color: #fff;
+  width: fit-content;
+  border-radius: 20px;
 }
 #aboutme div.wrap ul.intro>li p{
   line-height: 1.4;
@@ -183,8 +241,7 @@ section::before{
   height: 100%;
   min-height: 700px;
   /*! background-image: linear-gradient( 180deg, rgb(255, 255, 255) 0%, rgba(241, 247, 199, 0.5) 5%, rgb(255, 255, 255) 90% ); */
-  background-color: rgba(77, 126, 62, 0.3);
-  align-content: center;
+  background: linear-gradient(30deg, rgb(165, 190, 158) 10.1%, rgba(77,126,62,0.3) 10.2%);
 }
 }
 #skill div.wrap{
@@ -224,9 +281,10 @@ section::before{
 }
 #skill div.wrap ul.list>li h3{
   margin-bottom: 30px;
-  text-decoration-line: underline;
-  text-decoration-thickness: 4px;
-  text-decoration-color: #fff;
+  background-color: #fff;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 20px;
 }
 #skill div.wrap ul.list>li ul.sub{
   column-gap: 10px;
@@ -358,8 +416,8 @@ section::before{
 #portfolio {
   height: 100%;
   min-height: 700px;
-  background-color: rgba(77,126,62,0.5);
-  align-content: center;
+/*   background-color: rgba(77,126,62,0.5); */
+  background: linear-gradient(30deg, rgb(130, 164, 119) 10.1%, rgba(77,126,62,0.5) 10.2%);
 }
 #portfolio div.wrap {
   grid-template-columns: 50% 1fr;
@@ -417,10 +475,13 @@ section::before{
 }
 #portfolio div.wrap ul.pf li:nth-child(n+4):nth-child(-n+6) a::after{
   background-image: url(../img/Preparing.svg);
-  background-size: 30%;
+  background-size: 20%;
 }
-#portfolio div.wrap ul.pf li a:hover::after{
+#portfolio div.wrap ul.pf li:hover a::after{
   background-color: #7b8e76;
+  border-radius: 20px;
+  box-shadow: 5px 8px 10px #222;
+  transform: scale(1.2);
 }
 #portfolio div.wrap ul.list {
   grid-column: 2;
@@ -434,8 +495,10 @@ section::before{
 #portfolio div.wrap ul.list li h3 {
   grid-column: 1 /span 2;
   grid-row: 1;
-  margin-bottom: 30px;
-  border-bottom: 3px solid #fff;
+  background-color: #fff;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 20px;
 }
 #portfolio div.wrap ul.list li figure {
   grid-column: 1;
@@ -465,15 +528,18 @@ section::before{
 }
 #portfolio div.wrap ul.list li ul.sub li a{
   margin: 30px 0 0 0;
-  background-color: #fff;
   padding: 5px 15px;
-  border-radius: 8px;
   font-weight: 700;
   transition: 0.2s;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  text-align: center;
+  align-content: center;
+  background-color: #eee;
 }
 #portfolio div.wrap ul.list li ul.sub li a:hover{
-  background-color: #333;
   color: #fff;
+  background-color: #333;
 }
 #portfolio div.wrap ul.list li ul.sub li ul {
 }
@@ -495,6 +561,7 @@ section::before{
 #process div.wrap h2{
   grid-column: 1 / span 2;
   grid-row: 1;
+  z-index: 1;
 }
 #process div.wrap p{
   grid-column: 1 / span 2;
@@ -534,8 +601,35 @@ section::before{
   text-align: center;
   align-content: center;
   transition: 0.2s;
+  z-index: 1;
+  background-color: #eee;
 }
 #process div.wrap a:hover{
+  color: #fff;
+  background-color: #333;
+}
+/* contact */
+#contact{
+  
+}
+#contact div.wrap{
+  
+}
+#contact h2{
+  
+}
+#contact a{
+  border: 2px solid #4D7E3E;
+  background-color: #4D7E3E;
+  margin-left: 30px;
+  align-self: center;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  align-self: end;
+  color: #fff;
+}
+#contact a:hover{
   color: #fff;
   background-color: #333;
 }
