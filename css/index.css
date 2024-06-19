@@ -77,6 +77,9 @@ header div.wrap nav ul.enb li {
 header div.wrap nav ul.enb li a {
   padding: 0 10px;
 }
+header div.wrap nav button.menu{
+  font-size: 0;
+}
 /* 바디영역 */
 body{
   height: 100%;
