@@ -20,7 +20,6 @@
  
 ## 포트폴리오 작품
 (작품들을 나열하고 각 작품에 대한 간략한 설명과 링크 제공)
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="100" height="60"/>
 ![pf1](https://github.com/user-attachments/assets/95c97f27-f1f2-45e5-bc76-3c4bcff894ec)
 ![pf2](https://github.com/user-attachments/assets/e13f22d0-453f-4d21-82c5-2dca7d06556c)
 ![pf3](https://github.com/user-attachments/assets/3e09c8ca-d6ad-40c1-bafb-d7b7722cee0e)
@@ -28,8 +27,6 @@
 
 
 ## 스크린샷 또는 데모(포트폴리오 웹사이트의 스크린샷을 추가)
-![ww]
-
 <h3 align="left">Languages and Tools:</h3>
 <p align="left" style="white-space: pre-line; display: flex;">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
@@ -41,7 +38,8 @@
 
 ## 작성자 정보
 (이메일 주소나 연락처 정보를 추가)
-<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="css3" width="40" height="40"/>
+
+<img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="css3" width="100" height="40"/>
 
 ## 향후 계획 (선택 사항)
 (추가적인 기능 개발, 디자인 개선, 사용자 피드백 수렴 등)
