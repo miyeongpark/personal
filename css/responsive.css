@@ -1,10 +1,62 @@
-/* 스크린이고 최대너비가 768px인 경우, {}안의 스타일을 적용한다. */
-@media screen and (max-width:768px) {
+/* 스크린이고 최대너비가 1023px인 경우, {}안의 스타일을 적용한다. 
+모바일 탭 기준*/
+@media screen and (max-width: 1023px){
+  #aboutme div.wrap ul.intro > li:nth-child(1) p::after{
+  width: 650px;
+  transform: translate(-20px, 10px);
+  }
+  section .wrap::before{
+  left: 0;
+  right: -70%;
+  top: 5%;
+  }
+  #skill .wrap .skill li{
+  width: 100%;
+  height: 220px;
+  }
+  #skill .wrap .skill li figure img{
+  width: 60px;
+  height: 60px;
+  }
+  #skill .wrap .skill li h3{
+  font-size: 16px;
+  }
+  #skill .wrap .skill li p{
+  font-size: 13px;
+  line-height: 1.4;
+  padding-left: 20px;
+  }
+  #portfolio .wrap h2{
+  margin-left: 20px;
+  }
+  #portfolio .wrap div .slick-prev{
+  left: -5%;
+  }
+  #portfolio .wrap div .slick-next{
+  right: 5%;
+  }
+  #portfolio .wrap div .slick-dots > li{
+  margin-bottom: 0;
+  width: calc(90% / 5);
+  }
+  #portfolio .wrap .slick-dots{
+  width: 90%;
+  transform: translate(2%);
+  }
+  #portfolio .wrap .slick-dots li img{
+  width: 150px;
+  height: 100px;
+  }
+}
+
+/* 스크린이고 최대너비가 767px인 경우, {}안의 스타일을 적용한다. 
+모바일 핸드폰 기준*/
+@media screen and (max-width:767px) {
   .wrap{
   padding: 0 10px;
   }
-  div#title{
-  background-image: radial-gradient(circle, rgba(77,126,62,0.7) 1%, rgb(255, 255, 255) 50% );  
+  header div.wrap nav ul.gnb li a{
+  display: none;
   }
   header div.wrap nav{
   position: relative;
@@ -26,24 +78,238 @@
   background-image: url(../img/menu.svg);
   background-size: cover;
   width: 40px;
-  height: 40px;    
+  height: 40px;
+  cursor: pointer;
+  }
+/*  타이틀 ---------------------------------------------------------------------------------------------------  */
+  div#title{
+  /*! background-image: radial-gradient(circle, rgba(77,126,62,0.7) 1%, rgb(255, 255, 255) 50% ); */  
+  height: 100vh;
   }
   div#title div.wrap h2{
-  font-size: calc(50px * 0.6);
   text-align: center;
+  line-height: 1.1;
   }
   div#title div.wrap p{
-  font-size: calc(32px * 0.6);
+  font-size: 18px;
   text-align: center;
   }
   div#title::after{
   display: none;
   }
+/*  어바웃 미 ---------------------------------------------------------------------------------------------------  */
+  #aboutme{
+  height: 100vh;
+  }
   #aboutme div.wrap{
   display: flex;
   flex-direction: column;
-  height: 100%;
+  }
+  #aboutme div.wrap figure{
+  width: 100%;
+  margin-top: 30px;
+  }
+  #aboutme div.wrap figure img{
+  width: 100%;
+  height: 200px;
+  }
+  #aboutme div.wrap ul.intro{
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  height: fit-content;
+  }
+  #aboutme div.wrap ul.intro > li:nth-child(1){
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0;
+  grid-column: 1 /span 2;
+  grid-row: 1;
+  }
+  #aboutme div.wrap ul.intro > li:nth-child(1) h3{
+  margin: 0;
+  }
+  #aboutme div.wrap ul.intro > li h3{
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px;
+  }
+  #aboutme div.wrap ul.intro > li p{
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  padding-top: 10px;
+  line-height: 1.3;
+  }
+  #aboutme div.wrap ul.intro > li:nth-child(1) p::after{
+  width: 100%;
+  transform: translate(0px, 15%);
+  }
+  #aboutme div.wrap ul.intro > li:nth-child(3) p::before{
+  height: 15%;
+  transform: translate(-10px, -25%);
+  }
+  #aboutme div.wrap ul.intro > li:nth-child(3) span{
+  font-size: 10.5px;
+  }
+ /*  스킬 앤 툴 ---------------------------------------------------------------------------------------------------  */ 
+  #skill{
+  height: 100vh;
+  }
+  #skill .wrap .skill{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  transform: translateY(10%);
+  }
+  #skill .wrap .skill li{
+  width: calc((100% - 20px) / 3);
+  padding: 5px;
+  height: fit-content;
+  }
+  #skill .wrap h2{
+  margin-bottom: 20px;
+  }
+  #skill .wrap .skill li figure img{
+  width: 50%;
+  }
+  #skill .wrap .skill li p{
+  display: none;
+  }
+  #skill .wrap .skill li:nth-child(n+7):nth-child(-n+8){
+  transform: translateX(-60px);
+  }
+ /*  포트폴리오 ---------------------------------------------------------------------------------------------------  */ 
+  #portfolio{
+  height: 100vh;
+  }
+  #portfolio .wrap h2{
+  margin-bottom: 0;
+  }
+  #portfolio .wrap div{ 
+  margin: 0;
+  }
+  #portfolio .wrap div ul{
+  width: 100%;
+  }
+  #portfolio .wrap div ul li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0;
+  margin-bottom: 0;
+  }
+  #portfolio .wrap div ul li a{  
+  height: 70%;
+  }
+  #portfolio .wrap div ul li a img{
+  width: 100%;
+  height: 70%;
+  }
+  #portfolio .wrap div ul li:nth-child(1) a::after{
+  width: 50%;
+  height: 50%;
+  top: 12%;
+  right: -10%;
+  }
+  #portfolio .wrap div ul li div.info{
+  font-size: 13px;
+  line-height: 1.4;
+  }
+  #portfolio .wrap div ul li span{
+  margin-bottom: 60px;
+  }
+  #portfolio .wrap .slick-dots{
+  height: 70px;
+  }
+  #portfolio .wrap div .slick-dots > li{
+  margin: 0;
+  }
+  #portfolio .wrap .slick-dots li img{
+  width: 100%;
+  height: 70px;
+  }
+  #portfolio .wrap div ul li h3{
+  font-size: 30px;
+  }
+  #portfolio .wrap div ul li p{
+  font-size: 15px;
+  }
+  #portfolio .wrap div .slick-prev{
+  left: 0;
+  top: 60%;
+  z-index: 5;
+  }
+  #portfolio .wrap div .slick-next{
+  right: 0;
+  top: 60%;
+  z-index: 5;
+  }
+/*  컨텍트 ---------------------------------------------------------------------------------------------------  */ 
+  #contact{
+  height: 100vh;
+  }
+  #contact .wrap #card{
+  width: 90%;
+  position: absolute;
+  top: 55%;
+  left: 5%;
+  }
+/*  푸터 ---------------------------------------------------------------------------------------------------  */ 
+  footer div.wrap{
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  column-gap: 10px;
+  }
+  footer div.wrap address{
+  grid-column: 1 /span 2;
+  grid-row: 2;
+  }
+  footer div.wrap ul.sns{
+  grid-column: 2;
+  grid-row: 1;
+  }
+  footer div.wrap ul.fnb{
+  display: none;
+  }
+  footer div.wrap p{
+  grid-column: 1 /span 2;
+  grid-row: 3;
+  font-size: 11px;
+  }
+}
+
+/* 스크린이고 최대너비가 480px인 경우, {}안의 스타일을 적용한다. 
+모바일 기준*/
+@media screen and (max-width: 479px){
+  div#title div.wrap h2{
+  font-size: 70px;
+  }
+  div#title div.wrap p{
+  font-size: 15px;
+  }
+  #aboutme div.wrap ul.intro > li{
+  padding: 0;
+  }
+  #aboutme div.wrap ul.intro > li:nth-child(2){
+  margin-right: 10px;
+  }
+  #aboutme div.wrap ul.intro > li h3{
+  padding: 0;
+  margin-top: 10px;
+  }
+  #aboutme div.wrap ul.intro > li:nth-child(1) h3{
+  padding: 0;
+  text-align: center;
+  }
+  #aboutme div.wrap ul.intro > li:nth-child(1) p{
+  font-size: 15px;
+  }
+  #skill .wrap .skill li figure{
+  
+  height: 80px;
   }
   
 }
-  
